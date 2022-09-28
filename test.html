@@ -1,0 +1,42 @@
+<script>
+
+    let commands_ar=["RIGHT", "UP", "DOWN", "LEFT", "DOWN", "DOWN"];
+
+
+    function finalPostion(n,commands) {
+
+	let x = 0, y = 0;
+
+	for (i=0;i<commands.length-1;i++) {
+		let dx = 0;
+		let dy = 0;
+		switch (commands[i]) {
+            case "RIGHT":
+				dy = 1; break;
+            case "UP":
+            dx = -1; break;
+            case "DOWN":
+				dx = 1; break;
+			case "LEFT":
+				dy = -1; break;
+             case "DOWN":
+                dx = 1; break;
+            case "DOWN":
+				dx = 1; break;
+
+
+		}
+
+		if ((x+dx) >= 0 && (x+dx) < n && (y+dy) >= 0 && (y+dy) < n) {
+			x += dx;
+			y += dy;
+		}
+	}
+	return x*n + y;
+}
+
+
+	console.log(finalPostion(4,commands_ar));
+
+</script>
+
